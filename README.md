@@ -1,4 +1,4 @@
-# Kredily Attendance Automation Script
+# Kredily Attendance Automation 
 
 This is an attemp towards automating the 'Clock-In' and 'Clock-Out' actions on Kredily.
 
