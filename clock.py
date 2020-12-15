@@ -7,6 +7,7 @@ import json
 import time
 import csv
 import datetime
+import pprint
 
 dayDict = {0:"monday", 1:"tuesday", 2:"wednesday", 3:"thursday", 4:"friday", 5:"saturday", 6:"sunday"}
 
@@ -16,6 +17,8 @@ def log(action, data):
     with open('logs.csv', 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(rec)
+    
+    pprint(rec)
 
 def readData(Addr):
     data = json.load(open(Addr))
