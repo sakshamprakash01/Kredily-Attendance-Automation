@@ -8,7 +8,7 @@ This is an attemp towards automating the 'Clock-In' and 'Clock-Out' actions on K
 - chromium chrome-driver 1:85.0.4183.83 ```sudo apt-get install chromium-chromedriver```
 
 ## Steps to use
-- clone the repository and make sure all dependencies are installed.
+- clone the repository (clone 'headless' branch instead of 'main' if running without GUI) and make sure all dependencies are installed.
 - edit credentials.json to include the necessary details-
 ```
 {
