@@ -1,4 +1,4 @@
-# Kredily Attendance Automation 
+# Kredily Attendance Automation (Headless)
 
 This is an attemp towards automating the 'Clock-In' and 'Clock-Out' actions on Kredily.
 
