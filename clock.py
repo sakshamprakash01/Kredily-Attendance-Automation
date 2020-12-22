@@ -29,7 +29,7 @@ def clockIn():
 
     options = Options()
     options.headless = True
-    driver = webdriver.Chrome("/usr/bin/chromedriver", chrome_options=options)
+    driver = webdriver.Chrome("/usr/bin/chromedriver", options=options)
     #driver = webdriver.Chrome()
     wait = WebDriverWait(driver, 10)
     driver.get('https://app.kredily.com/login/?_ga=2.193396265.545062843.1608056090-510643525.1608056090')
@@ -56,7 +56,7 @@ def clockOut():
 
     options = Options()
     options.headless = True
-    driver = webdriver.Chrome("/usr/bin/chromedriver", chrome_options=options)
+    driver = webdriver.Chrome("/usr/bin/chromedriver", options=options)
     #driver = webdriver.Chrome()
     wait = WebDriverWait(driver, 10)
     driver.get('https://app.kredily.com/login/?_ga=2.193396265.545062843.1608056090-510643525.1608056090')
