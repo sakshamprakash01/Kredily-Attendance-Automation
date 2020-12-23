@@ -1,6 +1,6 @@
 # Kredily Attendance Automation 
 
-This is an attemp towards automating the 'Clock-In' and 'Clock-Out' actions on Kredily.
+This is an attempt towards automating the 'Clock-In' and 'Clock-Out' actions on Kredily.
 
 ## Dependencies
 - schedule 0.6.0                        ``` pip install schedule==0.6.0``` 
