@@ -8,10 +8,24 @@ import json
 import time
 import csv
 import datetime
-import fileUtils
+
+dayDict = {0:"monday", 1:"tuesday", 2:"wednesday", 3:"thursday", 4:"friday", 5:"saturday", 6:"sunday"}
+
+def readData(Addr):
+    data = json.load(open(Addr))
+    return data
+
+def log(action, data):
+    current_time = datetime.datetime.now()
+    rec = [current_time, dayDict[current_time.weekday()], action, data["Email"]]
+    with open('logs.csv', 'a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(rec)
+    
+    print ("\n",rec,"\n")
 
 def clockOut():
-    data = fileUtils.readData('credentials.json')
+    data = readData('credentials.json')
 
     options = Options()
     options.headless = True
@@ -35,7 +49,7 @@ def clockOut():
     time.sleep(10)
     driver.quit()
 
-    fileUtils.log("Clock-Out", data)
+    log("Clock-Out", data)
 
-if __name__ == "__main__":
-    clockOut()
+
+clockOut()
