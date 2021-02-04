@@ -13,7 +13,7 @@ dayDict = {0:"monday", 1:"tuesday", 2:"wednesday", 3:"thursday", 4:"friday", 5:"
 
 def log(action, data):
     current_time = datetime.datetime.now()
-    rec = [current_time, dayDict[current_time.weekday()], action, data["Email"]]
+    rec = [current_time, dayDict[current_time.weekday()], action, data["LoginID"]]
     with open('logs.csv', 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(rec)
@@ -24,8 +24,8 @@ def readData(Addr):
     data = json.load(open(Addr))
     return data
 
-def clockIn():
-    data = readData('credentials.json')
+def clockIn(data):
+    # data = readData('credentials.json')
 
     options = Options()
     options.headless = True
@@ -44,15 +44,15 @@ def clockIn():
     signInButton2.click()
 
     webClock = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,'#clockInBtn')))
-    #webClock.click()
+    webClock.click()
 
     time.sleep(10)
     driver.quit()
 
     log ("Clock-In", data)
 
-def clockOut():
-    data = readData('credentials.json')
+def clockOut(data):
+    # data = readData('credentials.json')
 
     options = Options()
     options.headless = True
@@ -71,7 +71,7 @@ def clockOut():
     signInButton2.click()
 
     webClock = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,'#clockInBtn')))
-    #webClock.click()
+    webClock.click()
 
     time.sleep(10)
     driver.quit()
